@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    background-color: grey;
+    text-align: center;
+    text-shadow: 3px 2px 1px black;
+}
+
+header {
+    background-image: url("background.jpg");
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+}
+
+ul {
+    text-align: center;
+    list-style-type: none;
+    font-size: 17px;
+}
+
+ul li {
+    display: inline-block;
+    height: 50px;
+    width: 100px;
+    align-content: center;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.3 ease;
+}
+
+ul li a:hover {
+    background-color: yellow;
+    color: #000000;
+    box-shadow: 2px 2px 2px black;
+    padding: 10px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.content {
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+}
+
+.h1-content {
+    text-shadow: 5px 4px 2px black;
+    font-size: 40px;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+}
+
+.line {
+    width: 150px;
+    height: 4px;
+    background: yellow;
+    margin: auto;
+}
+
+.buy {
+    color: blue;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.img-shoes {
+    max-width: 100%;
+    color: #000000;
+    box-shadow: 2px 2px 2px black;
+}
+
+.content-shoes {
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 16px;
+}
+
+.shoes {
+    width: 300px;
+}
+
+.content-jersey {
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 16px;
+}
+
+.img-jersey {
+    max-width: 100%;
+    background-color: grey;
+    color: #000000;
+    box-shadow: 2px 2px 2px black;
+}
+
+.jersey {
+    width: 300px;
+}
+
+.content-acc {
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.acc {
+    width: 350px;
+}
+
+.img-acc {
+    max-width: 100%;
+    background-color: grey;
+    color: #000000;
+    box-shadow: 2px 2px 2px black;
+}
+
+.bottom-bwh {
+    background-color: gray;
+    font-size: 20px;
+    margin-top: 520px;
+    width: 100%;
+    text-align: center;
+}
+
+.content-about {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+}
+
+.content-about p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.content-about strong {
+    color: #000000;
+}
+
+/* Zoom and fade-in animation on scroll */
+@keyframes zoomFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Apply animation to each product image on scroll */
+.content-shoes, .content-jersey, .content-acc {
+    opacity: 0;
+    animation: zoomFadeIn 0.6s ease forwards;
+    animation-delay: 0.3s;
+    transition: transform 0.3s ease;
+}
+
+.content-shoes.animate, .content-jersey.animate, .content-acc.animate {
+    opacity: 1;
+}
+
+/* Hover effect for images */
+.img-shoes:hover, .img-jersey:hover, .img-acc:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* Ensures each shoe, jersey, and accessory item has a smooth entrance */
+.shoes, .jersey, .acc {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.shoes.show, .jersey.show, .acc.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fixed Navbar */
+.main {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    transition: background-color 0.3s ease;
+}
+
+.main-navbar li a {
+    padding: 15px 20px; /* Adjust padding for fixed navbar */
+}
+
+/* Background color change when scrolling */
+.scrolled {
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background when scrolled */
+}
